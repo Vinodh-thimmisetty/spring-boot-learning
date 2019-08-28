@@ -1,0 +1,35 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: spring-batch
+  profiles:
+    active:
+      - dev
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  h2:
+    console:
+      enabled: true
+
+---
+
+spring:
+  profiles: dev
+
+---
+
+spring:
+  profiles: prod
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+
+
