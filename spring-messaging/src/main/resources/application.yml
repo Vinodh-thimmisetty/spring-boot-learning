@@ -1,0 +1,15 @@
+server:
+  port: 9002
+
+spring:
+  rabbitmq:
+    addresses: <<amqp:url>>
+#    host: cat.rmq.cloudamqp.com
+#    port: 5672
+#    username: rxefzpar
+#    password: 5Mjb7HXG4a3YMOIWIiy4udQ4rDQWADva
+
+exchange: eventExchange
+subscriber:
+  queue: new-customers-queue
+  routingKey: customer.*

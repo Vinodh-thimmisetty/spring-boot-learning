@@ -16,6 +16,7 @@
     </properties>
     <modules>
         <module>spring-batch</module>
+        <module>spring-messaging</module>
     </modules>
     <dependencyManagement>
         <!--Any dependency which will be configured in certain child and NOT in all modules must go here. -->
@@ -31,6 +32,11 @@
     </dependencyManagement>
     <!--If we need certain dependencies across all child modules; add here. So, child modules no need to include again. -->
     <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
