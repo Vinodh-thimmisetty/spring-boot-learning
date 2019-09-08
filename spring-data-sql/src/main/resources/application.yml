@@ -1,0 +1,61 @@
+server:
+  port: 9004
+spring:
+  profiles:
+    active:
+      - dev
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+---
+
+spring:
+  profiles: dev
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:vinodh
+    username: vinodh
+    password: vinodh
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        generate_statistics: true
+        format_sql: true
+        dialect: org.hibernate.dialect.H2Dialect
+  database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+#logging:
+#  level:
+#    org:
+#      hibernate:
+#        SQL: DEBUG
+#        type: TRACE
+
+---
+
+spring:
+  profiles: stage
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://localhost/1433;databaseName=vinodh
+    username: vinodh
+    password: vinodh
+  jpa:
+    database-platform: org.hibernate.dialect.SQLServerDialect
+
+---
+
+spring:
+  profiles: prod
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/vinodh
+    username: vinodh
+    password: vinodh
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect

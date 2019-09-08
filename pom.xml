@@ -17,6 +17,8 @@
     <modules>
         <module>spring-batch</module>
         <module>spring-messaging</module>
+        <module>spring-data-sql</module>
+        <module>spring-data-nosql</module>
     </modules>
     <dependencyManagement>
         <!--Any dependency which will be configured in certain child and NOT in all modules must go here. -->
@@ -36,6 +38,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
